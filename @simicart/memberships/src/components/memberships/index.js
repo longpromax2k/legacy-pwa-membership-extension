@@ -1,6 +1,6 @@
 import React from 'react';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
-import PlanList from '../planlist/index';
+import PlanList from './planlist/index';
 
 import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
@@ -39,7 +39,7 @@ const MembershipItem = props => {
             </div>
 
             <form onSubmit={handleAddToCart}>
-                <PlanList price={props.price} />
+                <PlanList price={props.price} type={props.durationtype} />
                 <button type="submit" className={defaultClasses.addToCart}>
                     Add to cart
                 </button>
@@ -63,15 +63,18 @@ const MembershipPage = props => {
         if (mbshipLoading) return <fullPageLoadingIndicator />;
         else if (mbshipError) {
             console.error(mbshipError);
-            return <div className='text-center'>Error</div>;
+            return <div className="text-center">Error</div>;
         } else {
-            console.log(mbshipData);
             return (
                 <>
                     <div className={classes.root}>
                         {mbshipData.products.items.length > 0 ? (
                             mbshipData.products.items.map((item, i) => {
                                 let isFeatured = i !== 1 ? 0 : 1;
+
+                                console.log(
+                                    item.mp_membership_attributes.duration_type
+                                );
 
                                 return (
                                     <MembershipItem
@@ -80,7 +83,11 @@ const MembershipPage = props => {
                                         desc={item.description.html}
                                         imageurl={item.image.url}
                                         label={item.image.label}
-                                        // price={item.mpmembership_price_fixed}
+                                        price={item.mpmembership_price_fixed}
+                                        durationtype={
+                                            item.mp_membership_attributes
+                                                .duration_type
+                                        }
                                         featured={isFeatured}
                                     />
                                 );
@@ -93,7 +100,7 @@ const MembershipPage = props => {
             );
         }
     } catch (error) {
-        return <div className='text-center'>Error.</div>;
+        return <div className="text-center">Error.</div>;
         console.error(mbshipError);
         console.error(error);
     }
