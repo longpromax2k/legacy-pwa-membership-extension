@@ -25,6 +25,9 @@
 .description {
     @apply w-full p-3 my-3;
 }
+.description ul li {
+    @apply list-disc list-inside;
+}
 .featuredItem {
     @apply absolute -top-2 -right-2;
 }
