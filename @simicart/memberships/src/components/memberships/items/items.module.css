@@ -1,7 +1,7 @@
 .membershipItem {
     @apply m-3 w-80 relative
 	flex flex-col items-center 
-	border rounded-md
+	border rounded-md duration-sm
 	hover_shadow-xl;
 }
 .membershipItemTitle {
@@ -34,5 +34,5 @@
     transform: var(--tw-transform);
 }
 .membershipItem form {
-	@apply text-center;
+    @apply my-0 text-center;
 }

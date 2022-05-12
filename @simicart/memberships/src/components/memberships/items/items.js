@@ -11,30 +11,32 @@ const Items = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     return (
         <div className={classes.membershipItem}>
-            {props.featured ? (
-                <div className={classes.featuredItem}>
-                    <img
-                        src="https://membership-demo.mageplaza.com/media/mageplaza/membership/default/featured.png"
-                        alt="featured"
-                    />
-                    <span>
-                        <strong>Featured</strong>
-                    </span>
+            <div className="w-full flex-grow">
+                {props.featured ? (
+                    <div className={classes.featuredItem}>
+                        <img
+                            src="https://membership-demo.mageplaza.com/media/mageplaza/membership/default/featured.png"
+                            alt="featured"
+                        />
+                        <span>
+                            <strong>Featured</strong>
+                        </span>
+                    </div>
+                ) : null}
+                <div className={classes.membershipItemTitle}>
+                    <h1>{props.name}</h1>
                 </div>
-            ) : null}
-            <div className={classes.membershipItemTitle}>
-                <h1>{props.name}</h1>
-            </div>
-            <div className={classes.membershipItemContent}>
-                <img
-                    className={classes.membershipItemImage}
-                    src={props.imageurl}
-                    alt={props.label}
-                />
-                <div
-                    className={classes.description}
-                    dangerouslySetInnerHTML={{ __html: props.desc }}
-                />
+                <div className={classes.membershipItemContent}>
+                    <img
+                        className={classes.membershipItemImage}
+                        src={props.imageurl}
+                        alt={props.label}
+                    />
+                    <div
+                        className={classes.description}
+                        dangerouslySetInnerHTML={{ __html: props.desc }}
+                    />
+                </div>
             </div>
 
             <form>
