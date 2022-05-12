@@ -17,9 +17,11 @@ import StoreSwitcher from '@magento/venia-ui/lib/components/Header/storeSwitcher
 import CurrencySwitcher from '@magento/venia-ui/lib/components/Header/currencySwitcher';
 import MegaMenu from '@magento/venia-ui/lib/components/MegaMenu';
 import PageLoadingIndicator from '@magento/venia-ui/lib/components/PageLoadingIndicator';
-import SimiCartIcon from './SimiCartIcon'
+import SimiCartIcon from './SimiCartIcon';
 
-const SearchBar = React.lazy(() => import('@magento/venia-ui/lib/components/SearchBar'));
+const SearchBar = React.lazy(() =>
+    import('@magento/venia-ui/lib/components/SearchBar')
+);
 
 const Header = props => {
     const {

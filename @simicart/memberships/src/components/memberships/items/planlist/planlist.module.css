@@ -2,5 +2,5 @@
     @apply w-full p-3 rounded-md;
 }
 .permanentContainer {
-		@apply w-64;
+    @apply w-64;
 }

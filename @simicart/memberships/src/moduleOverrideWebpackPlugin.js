@@ -37,8 +37,8 @@ module.exports = class NormalModuleOverridePlugin {
             (result, x) => ({
                 ...result,
                 [require.resolve(x)]:
-                this.requireResolveIfCan(map[x]) ||
-                this.resolveModulePath(context, map[x])
+                    this.requireResolveIfCan(map[x]) ||
+                    this.resolveModulePath(context, map[x])
             }),
             {}
         );
@@ -60,9 +60,12 @@ module.exports = class NormalModuleOverridePlugin {
                     return;
                 }
 
-                const moduleToReplace = this.requireResolveIfCan(resolve.request, {
-                    paths: [resolve.context]
-                });
+                const moduleToReplace = this.requireResolveIfCan(
+                    resolve.request,
+                    {
+                        paths: [resolve.context]
+                    }
+                );
 
                 if (moduleToReplace && moduleMap[moduleToReplace]) {
                     resolve.request = moduleMap[moduleToReplace];
