@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PlanList from '../planlist/index';
+import PlanList from './planlist/index';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
