@@ -11,7 +11,9 @@ import defaultClasses from './memberships.module.css';
 // Membership items
 const MembershipItem = props => {
     return (
-        <div className={defaultClasses.membershipItem}>
+        <div
+            className={defaultClasses.membershipItem}
+        >
             {props.featured ? (
                 <div className={defaultClasses.featuredItem}>
                     <img
@@ -48,12 +50,6 @@ const MembershipItem = props => {
     );
 };
 
-// handle add to cart action
-const handleAddToCart = e => {
-    e.preventDefault();
-    alert('Added to cart: ' + e.target.elements.duration.value);
-};
-
 // Main component
 const MembershipPage = props => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
@@ -71,10 +67,6 @@ const MembershipPage = props => {
                         {mbshipData.products.items.length > 0 ? (
                             mbshipData.products.items.map((item, i) => {
                                 let isFeatured = i !== 1 ? 0 : 1;
-
-                                console.log(
-                                    item.mp_membership_attributes.duration_type
-                                );
 
                                 return (
                                     <MembershipItem
