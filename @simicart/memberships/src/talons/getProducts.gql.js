@@ -35,15 +35,4 @@ const GET_MEMBERSHIP_PRODUCTS = gql`
     }
 `;
 
-// mp_membership_attributes {
-//     duration_type
-//     membership
-//     membership_price_fixed
-// }
-
-// mpmembership_price_fixed
-// mpmembership_duration_options
-// mpmembership
-// mpmembership_duration
-
 export default GET_MEMBERSHIP_PRODUCTS;
