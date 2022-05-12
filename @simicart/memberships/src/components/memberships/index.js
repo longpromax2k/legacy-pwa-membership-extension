@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
+import MembershipItem from './items/index';
 import PlanList from './planlist/index';
 
 import { useGetProducts } from '../../talons/useGetProducts';
@@ -7,48 +9,6 @@ import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
 import defaultClasses from './memberships.module.css';
-
-// Membership items
-const MembershipItem = props => {
-    return (
-        <div
-            className={defaultClasses.membershipItem}
-        >
-            {props.featured ? (
-                <div className={defaultClasses.featuredItem}>
-                    <img
-                        src="https://membership-demo.mageplaza.com/media/mageplaza/membership/default/featured.png"
-                        alt="featured"
-                    />
-                    <span>
-                        <strong>Featured</strong>
-                    </span>
-                </div>
-            ) : null}
-            <div className={defaultClasses.membershipItemTitle}>
-                <h1>{props.name}</h1>
-            </div>
-            <div className={defaultClasses.membershipItemContent}>
-                <img
-                    className={defaultClasses.membershipItemImage}
-                    src={props.imageurl}
-                    alt={props.label}
-                />
-                <div
-                    className={defaultClasses.description}
-                    dangerouslySetInnerHTML={{ __html: props.desc }}
-                />
-            </div>
-
-            <form onSubmit={handleAddToCart}>
-                <PlanList price={props.price} type={props.durationtype} />
-                <button type="submit" className={defaultClasses.addToCart}>
-                    Add to cart
-                </button>
-            </form>
-        </div>
-    );
-};
 
 // Main component
 const MembershipPage = props => {

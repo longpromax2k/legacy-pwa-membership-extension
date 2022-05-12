@@ -1,0 +1,38 @@
+.membershipItem {
+    @apply m-3 w-80 relative
+	flex flex-col items-center 
+	border rounded-md
+	hover_shadow-xl;
+}
+.membershipItemTitle {
+    @apply w-full py-3 rounded-sm
+	text-white bg-blue-600
+	text-center;
+}
+.membershipItemContent {
+    @apply px-3;
+}
+.membershipItem h1 {
+    @apply text-xl font-bold;
+}
+.membershipItemImage {
+    @apply w-full p-1 py-3;
+}
+.membershipItem button.addToCart {
+    @apply w-4/5 p-3 my-3 mb-10 rounded-md
+	bg-gray-200 hover_bg-gray-300;
+}
+.description {
+    @apply w-full p-3 my-3;
+}
+.featuredItem {
+    @apply absolute -top-2 -right-2;
+}
+.featuredItem span {
+    @apply text-white absolute top-7 right-4;
+    --tw-rotate: 42deg;
+    transform: var(--tw-transform);
+}
+.membershipItem form {
+	@apply text-center;
+}
