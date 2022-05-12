@@ -1,6 +1,8 @@
 .root {
     @apply m-3 
-    flex justify-center;
+    grid gap-3 justify-items-center;
+    /* grid-cols-1 md_grid-cols-2 lg_grid-cols-3; */
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 
 /* membership item */
@@ -25,7 +27,7 @@
     @apply w-full p-1 py-3;
 }
 .membershipItem button.addToCart {
-    @apply w-4/5 p-3 my-3 rounded-md
+    @apply w-4/5 p-3 my-3 mb-10 rounded-md
     bg-gray-200 hover_bg-gray-300;
 }
 .description {

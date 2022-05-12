@@ -1,0 +1,6 @@
+.selectMenu {
+    @apply w-full p-3 rounded-md;
+}
+.permanentContainer {
+		@apply w-64;
+}
