@@ -2788,6 +2788,10 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@simicart/header@link:./@simicart/header":
+  version "0.0.0"
+  uid ""
+
 "@simicart/memberships@link:./@simicart/memberships":
   version "0.0.0"
   uid ""
