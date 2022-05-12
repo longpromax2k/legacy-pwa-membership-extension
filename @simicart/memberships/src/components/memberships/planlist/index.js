@@ -22,8 +22,8 @@ export default function PlanList(props) {
     }
     return (
         <div className={defaultClasses.permanentContainer}>
-            <strong className='text-xl'>{'$' + props.price + ' / month'}</strong>
-            <div>Pernament</div>
+            <strong className='text-xl'>{'$' + props.price}</strong>
+            <div>Permanent</div>
         </div>
     );
 }
