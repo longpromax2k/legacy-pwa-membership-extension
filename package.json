@@ -29,8 +29,8 @@
     },
     "dependencies": {
         "@magento/pwa-buildpack": "~11.3.0",
-        "@simicart/memberships": "link:./@simicart/memberships",
-        "@simicart/header": "link:./@simicart/header"
+        "@simicart/header": "link:./@simicart/header",
+        "@simicart/memberships": "link:./@simicart/memberships"
     },
     "devDependencies": {
         "@adobe/apollo-link-mutation-queue": "~1.0.2",
