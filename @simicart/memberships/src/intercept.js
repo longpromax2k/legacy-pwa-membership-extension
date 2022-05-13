@@ -24,6 +24,14 @@ module.exports = targets => {
             path: '@simicart/memberships/src/components/memberships'
         });
 
+        routesArray.push({
+            name: 'SimicartUpgrade',
+            pattern: '/upgrade',
+            path: '@simicart/memberships/src/components/upgrade'
+        });
+
+        return routesArray;
+
         return routesArray;
     });
 };
