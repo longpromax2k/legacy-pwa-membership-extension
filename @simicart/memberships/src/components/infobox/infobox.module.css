@@ -1,4 +1,4 @@
 .root {
     @apply bg-green-200 text-blue-500
-		rounded p-5 my-5;
+		rounded p-5 mx-3 my-5;
 }
