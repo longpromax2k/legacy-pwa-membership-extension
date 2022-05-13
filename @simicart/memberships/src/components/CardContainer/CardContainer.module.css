@@ -1,0 +1,5 @@
+.root {
+    @apply m-3 
+    grid gap-3 justify-items-center;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
