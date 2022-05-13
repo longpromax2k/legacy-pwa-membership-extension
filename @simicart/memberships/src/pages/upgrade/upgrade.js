@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MembershipItem from '../items/index';
+import MembershipItem from '../../components/items/index';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
@@ -14,7 +14,7 @@ const Upgrade = props => {
     return (
         <>
             <h1 className="text-2xl mb-3">Membership</h1>
-            <div className={ classes.infobox }>
+            <div className={classes.infobox}>
                 To upgrade your membership, click on Upgrade button to view the
                 available membership packages and make purchase with good
                 prices.
