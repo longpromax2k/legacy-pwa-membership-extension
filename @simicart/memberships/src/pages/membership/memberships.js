@@ -9,6 +9,10 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './memberships.module.css';
 
+/*
+ * Membership Page that contains a list of all the memberships
+ * and the ability to add them to the cart.
+ */
 const MembershipPage = props => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
     const classes = mergeClasses(defaultClasses, props.classes);
@@ -30,6 +34,12 @@ const MembershipPage = props => {
     );
 };
 
+
+/*
+ * Error Page that displays an error message if there is an error
+ * in the fetching of the data.
+ * @param {Object} error - The error object
+ */
 const MembershipErrorPage = ({ error }) => {
     console.error(error);
     return (
