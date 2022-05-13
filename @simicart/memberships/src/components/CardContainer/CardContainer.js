@@ -27,7 +27,7 @@ const CardContainer = props => {
                                 item.mp_membership_attributes.duration_type
                             }
                             featured={isFeatured}
-                            button="Add to Cart"
+                            button={props.button}
                         />
                     );
                 })

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MembershipItem from '../../components/items/index';
+import CardContainer from '../../components/CardContainer/index';
 import InfoBox from '../../components/infobox/infobox';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
@@ -12,6 +13,9 @@ import data from './dumb.data.js';
 const UpgradePage = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     const { items } = data;
+
+    console.log(items);
+
     return (
         <>
             <h1 className="text-2xl mb-3">Membership</h1>
@@ -22,16 +26,7 @@ const UpgradePage = props => {
             />
             <h2 className="text-xl mb-1">Current Membership</h2>
             <hr />
-            <MembershipItem
-                key={items[0].uid}
-                name={items[0].name}
-                desc={items[0].description.html}
-                imageurl={items[0].image.url}
-                label={items[0].image.label}
-                price={items[0].mpmembership_price_fixed}
-                durationtype={items[0].mp_membership_attributes.sduration_type}
-                button="Upgrade"
-            />
+            <CardContainer button="Upgrade" data={items} />
         </>
     );
 };

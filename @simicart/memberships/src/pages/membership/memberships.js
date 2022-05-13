@@ -21,7 +21,10 @@ const MembershipPage = props => {
             <>
                 <h1 className="text-2xl mb-3">Membership</h1>
                 <hr />
-                <CardContainer data={mbshipData.products.items} />
+                <CardContainer
+                    button="Add to Cart"
+                    data={mbshipData.products.items}
+                />
             </>
         ))
     );
@@ -31,7 +34,8 @@ const MembershipErrorPage = ({ error }) => {
     console.error(error);
     return (
         <>
-            <div className="text-center">Error</div>
+            <div className="text-xl">Error</div>
+            <hr />
             <div>{error}</div>
         </>
     );
