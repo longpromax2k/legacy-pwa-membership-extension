@@ -34,7 +34,6 @@ const MembershipPage = props => {
     );
 };
 
-
 /*
  * Error Page that displays an error message if there is an error
  * in the fetching of the data.
