@@ -32,9 +32,13 @@ const Items = props => {
                         </span>
                     </div>
                 ) : null}
+
+
                 <div className={classes.membershipItemTitle}>
                     <h1>{props.name}</h1>
                 </div>
+
+
                 <div className={classes.membershipItemContent}>
                     <img
                         className={classes.membershipItemImage}
@@ -47,6 +51,7 @@ const Items = props => {
                     />
                 </div>
             </div>
+
 
             <form onSubmit={handleSubmit}>
                 <PlanList price={props.price} type={props.durationtype} />
