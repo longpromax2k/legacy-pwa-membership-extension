@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
-import MembershipItem from '../items/index';
+import MembershipItem from '../../components/items/index';
 
 import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
@@ -9,7 +9,6 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './memberships.module.css';
 
-// Main component
 const MembershipPage = props => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
     const classes = mergeClasses(defaultClasses, props.classes);
