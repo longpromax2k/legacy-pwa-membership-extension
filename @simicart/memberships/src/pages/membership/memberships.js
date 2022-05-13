@@ -38,7 +38,7 @@ const MembershipPage = props => {
 /*
  * Error Page that displays an error message if there is an error
  * in the fetching of the data.
- * @param {Object} error - The error object
+ * @props {Object} error - The error object
  */
 const MembershipErrorPage = ({ error }) => {
     console.error(error);
