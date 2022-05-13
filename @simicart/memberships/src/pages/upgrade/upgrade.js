@@ -1,6 +1,5 @@
 import React from 'react';
 
-import MembershipItem from '../../components/items/index';
 import CardContainer from '../../components/CardContainer/index';
 import InfoBox from '../../components/infobox/infobox';
 
