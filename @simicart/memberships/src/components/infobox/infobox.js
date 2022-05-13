@@ -6,11 +6,7 @@ import defaultClasses from './infobox.module.css';
 
 const InfoBox = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
-    return (
-        <div className={classes.root}>
-            { props.value }
-        </div>
-    );
+    return <div className={classes.root}>{props.value}</div>;
 };
 
 InfoBox.propTypes = {
