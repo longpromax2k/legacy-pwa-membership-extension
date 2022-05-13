@@ -21,6 +21,8 @@ const MembershipPage = props => {
         } else {
             return (
                 <>
+                    <h1 className="text-2xl mb-3">Membership</h1>
+                    <hr />
                     <div className={classes.root}>
                         {mbshipData.products.items.length > 0 ? (
                             mbshipData.products.items.map((item, i) => {
