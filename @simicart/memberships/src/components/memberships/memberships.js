@@ -2,7 +2,6 @@ import React from 'react';
 
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
 import MembershipItem from './items/index';
-import PlanList from './items/planlist/index';
 
 import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
