@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MembershipItem from '../../components/items/index';
+import InfoBox from '../../components/infobox/infobox';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
@@ -8,17 +9,17 @@ import defaultClasses from './upgrade.module.css';
 
 import data from './dumb.data.js';
 
-const Upgrade = props => {
+const UpgradePage = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     const { items } = data;
     return (
         <>
             <h1 className="text-2xl mb-3">Membership</h1>
-            <div className={classes.infobox}>
-                To upgrade your membership, click on Upgrade button to view the
+            <InfoBox
+                value="To upgrade your membership, click on Upgrade button to view the
                 available membership packages and make purchase with good
-                prices.
-            </div>
+                prices."
+            />
             <h2 className="text-xl mb-1">Current Membership</h2>
             <hr />
             <MembershipItem
@@ -35,8 +36,8 @@ const Upgrade = props => {
     );
 };
 
-Upgrade.propTypes = {
+UpgradePage.propTypes = {
     classes: shape({ root: string })
 };
-Upgrade.defaultProps = {};
-export default Upgrade;
+UpgradePage.defaultProps = {};
+export default UpgradePage;
