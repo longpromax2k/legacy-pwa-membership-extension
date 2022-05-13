@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
-import MembershipItem from '../../components/items/index';
+import CardContainer from '../../components/CardContainer';
 
 import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
@@ -13,50 +13,28 @@ const MembershipPage = props => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
     const classes = mergeClasses(defaultClasses, props.classes);
 
-    try {
-        if (mbshipLoading) return <fullPageLoadingIndicator />;
-        else if (mbshipError) {
-            console.error(mbshipError);
-            return <div className="text-center">Error</div>;
-        } else {
-            return (
-                <>
-                    <h1 className="text-2xl mb-3">Membership</h1>
-                    <hr />
-                    <div className={classes.root}>
-                        {mbshipData.products.items.length > 0 ? (
-                            mbshipData.products.items.map((item, i) => {
-                                let isFeatured = i !== 1 ? 0 : 1;
+    return (
+        (mbshipLoading && <fullPageLoadingIndicator />) ||
+        (mbshipError ? (
+            <MembershipErrorPage error={mbshipData} />
+        ) : (
+            <>
+                <h1 className="text-2xl mb-3">Membership</h1>
+                <hr />
+                <CardContainer data={mbshipData.products.items} />
+            </>
+        ))
+    );
+};
 
-                                return (
-                                    <MembershipItem
-                                        key={item.uid}
-                                        name={item.name}
-                                        desc={item.description.html}
-                                        imageurl={item.image.url}
-                                        label={item.image.label}
-                                        price={item.mpmembership_price_fixed}
-                                        durationtype={
-                                            item.mp_membership_attributes
-                                                .duration_type
-                                        }
-                                        featured={isFeatured}
-                                        button="Add to Cart"
-                                    />
-                                );
-                            })
-                        ) : (
-                            <div>No membership found</div>
-                        )}
-                    </div>
-                </>
-            );
-        }
-    } catch (error) {
-        return <div className="text-center">Error.</div>;
-        console.error(mbshipError);
-        console.error(error);
-    }
+const MembershipErrorPage = ({ error }) => {
+    console.error(error);
+    return (
+        <>
+            <div className="text-center">Error</div>
+            <div>{error}</div>
+        </>
+    );
 };
 
 MembershipPage.propTypes = {
