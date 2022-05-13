@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
-import MembershipItem from './items/index';
+import MembershipItem from '../items/index';
 
 import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
@@ -40,6 +40,7 @@ const MembershipPage = props => {
                                                 .duration_type
                                         }
                                         featured={isFeatured}
+                                        button="Add to Cart"
                                     />
                                 );
                             })
