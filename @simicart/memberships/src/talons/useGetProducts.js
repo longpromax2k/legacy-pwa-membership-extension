@@ -1,6 +1,13 @@
 import { useQuery } from '@apollo/client';
 import GET_MEMBERSHIP_PRODUCTS from './getProducts.gql';
 
+/*
+* Fetch products from the GraphQL endpoint and return the data
+* @return {Object} - return the query's state
+* @props {Object} mbshipData - fetched data from GraphQL
+* @props {Boolean} mbshipLoading - loading state of the query
+* @props {Object} mbshipError - error state of the query
+*/
 export const useGetProducts = () => {
     const { data: mbshipData, mbshipLoading, error: mbshipError } = useQuery(
         GET_MEMBERSHIP_PRODUCTS
