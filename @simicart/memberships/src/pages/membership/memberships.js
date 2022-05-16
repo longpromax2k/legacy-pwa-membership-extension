@@ -7,8 +7,6 @@ import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
-import defaultClasses from './memberships.module.css';
-
 /*
  * Membership Page that contains a list of all the memberships
  * and the ability to add them to the cart.
@@ -16,7 +14,6 @@ import defaultClasses from './memberships.module.css';
  */
 const MembershipPage = props => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
-    const classes = mergeClasses(defaultClasses, props.classes);
 
     return (
         (mbshipLoading && <fullPageLoadingIndicator />) ||

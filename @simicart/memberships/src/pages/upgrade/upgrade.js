@@ -5,7 +5,6 @@ import InfoBox from '../../components/infobox/infobox';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
-import defaultClasses from './upgrade.module.css';
 
 import data from './dumb.data.js';
 
@@ -15,7 +14,6 @@ import data from './dumb.data.js';
  * @return {ReactElement}
  */
 const UpgradePage = props => {
-    const classes = mergeClasses(defaultClasses, props.classes);
     const { items } = data;
     return (
         <>
