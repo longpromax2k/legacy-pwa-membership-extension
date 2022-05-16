@@ -4,8 +4,17 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './planlist.module.css';
 
+/*
+ * PlanList component that displays the information of the membership
+ * @params {Object} props - Props passed from parent
+ * @props {string} price - price of the membership
+ * @props {string} type - type of the membership
+ * @return {ReactElement}
+ */
 const PlanList = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
+    console.log(props);
+
     if (props.type === 'by_default') {
         return (
             <select

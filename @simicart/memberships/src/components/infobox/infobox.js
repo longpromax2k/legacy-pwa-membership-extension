@@ -4,6 +4,10 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './infobox.module.css';
 
+/*
+ * InfoBox component that displays the information
+ * @return {ReactElement}
+ */
 const InfoBox = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     return <div className={classes.root}>{props.value}</div>;

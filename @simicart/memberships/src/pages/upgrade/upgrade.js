@@ -9,12 +9,14 @@ import defaultClasses from './upgrade.module.css';
 
 import data from './dumb.data.js';
 
+/*
+ * Upgrade page that contains a card of registered memberships
+ * and the ability to upgrade it.
+ * @return {ReactElement}
+ */
 const UpgradePage = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     const { items } = data;
-
-    console.log(items);
-
     return (
         <>
             <h1 className="text-2xl mb-3">Membership</h1>

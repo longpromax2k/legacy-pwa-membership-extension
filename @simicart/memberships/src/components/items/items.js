@@ -9,9 +9,16 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './items.module.css';
 
+/*
+ * Item container for the membership cards
+ * @param {Object} props - Props passed from parent
+ * @props {Object[]} data - data object from the api passed from parent
+ */
 const Items = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     const history = useHistory();
+
+    console.log(props);
 
     const handleSubmit = e => {
         e.preventDefault();
