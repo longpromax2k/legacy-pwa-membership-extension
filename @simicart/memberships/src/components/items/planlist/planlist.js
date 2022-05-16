@@ -7,8 +7,7 @@ import defaultClasses from './planlist.module.css';
 /*
  * PlanList component that displays the information of the membership
  * @params {Object} props - Props passed from parent
- * @props {string} price - price of the membership
- * @props {string} type - type of the membership
+ * @props {string[]} benefits - the benefits of the membership
  * @return {ReactElement}
  */
 const PlanList = props => {

@@ -13,6 +13,7 @@ import defaultClasses from './items.module.css';
  * Item container for the membership cards
  * @param {Object} props - Props passed from parent
  * @props {Object[]} data - data object from the api passed from parent
+ * @return {ReactElement}
  */
 const Items = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
