@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MembershipItem from '../../components/items/index';
+import MembershipItem from '../items/index';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardContainer from '../../components/CardContainer/index';
+import CardContainer from '../../components/cardcontainer/index';
 import InfoBox from '../../components/infobox/infobox';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
