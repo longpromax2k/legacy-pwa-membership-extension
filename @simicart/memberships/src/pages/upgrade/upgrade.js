@@ -17,7 +17,9 @@ const UpgradePage = () => {
     const { items } = data;
     return (
         <>
-            <h1 className="text-2xl mb-3">Membership</h1>
+            <h1 className="text-2xl mb-3 text-center lg_text-left">
+                Membership
+            </h1>
             <InfoBox
                 value="To upgrade your membership, click on Upgrade button to view the
                 available membership packages and make purchase with good

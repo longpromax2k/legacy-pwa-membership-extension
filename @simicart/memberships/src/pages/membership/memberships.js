@@ -21,7 +21,9 @@ const MembershipPage = () => {
             <MembershipErrorPage error={mbshipError} />
         ) : (
             <>
-                <h1 className="text-2xl mb-3">Membership</h1>
+                <h1 className="text-2xl mb-3 text-center lg_text-left">
+                    Membership
+                </h1>
                 <hr />
                 <CardContainer
                     button="Add to Cart"
