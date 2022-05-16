@@ -13,7 +13,6 @@ import defaultClasses from './planlist.module.css';
  */
 const PlanList = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
-    console.log(props);
 
     if (props.type === 'by_default') {
         return (

@@ -13,7 +13,7 @@ import data from './dumb.data.js';
  * and the ability to upgrade it.
  * @return {ReactElement}
  */
-const UpgradePage = props => {
+const UpgradePage = () => {
     const { items } = data;
     return (
         <>

@@ -12,7 +12,7 @@ import { shape, string } from 'prop-types';
  * and the ability to add them to the cart.
  * @return {ReactElement}
  */
-const MembershipPage = props => {
+const MembershipPage = () => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
 
     return (

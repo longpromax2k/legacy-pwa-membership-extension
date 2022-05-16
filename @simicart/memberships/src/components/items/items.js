@@ -18,8 +18,6 @@ const Items = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
     const history = useHistory();
 
-    console.log(props);
-
     const handleSubmit = e => {
         e.preventDefault();
         history.push('/upgrade');
