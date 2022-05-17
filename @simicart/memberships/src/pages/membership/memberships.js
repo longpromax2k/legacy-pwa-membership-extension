@@ -4,17 +4,9 @@ import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/Loadi
 import CardContainer from '../../components/cardcontainer';
 
 import { useGetProducts } from '../../talons/useGetProducts';
-import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
-import dumbData from './dumb.data';
-
-// let newData = dumbData.map(item => {
-//     return {
-//         ...item,
-
-//     };
-// });
+import { plansdata, benefitdata } from './dumb.data';
 
 /*
  * Membership Page that contains a list of all the memberships
@@ -29,12 +21,15 @@ const MembershipPage = () => {
     const newData = mbshipItem.map((item, index) => {
         return {
             ...item,
+            benefits: benefitdata[index],
             mp_membership_attributes: {
                 ...item.mp_membership_attributes,
-                plans: dumbData[index]
+                plans: plansdata[index]
             }
         };
     });
+
+    console.log(newData);
 
     return (
         (mbshipLoading && <fullPageLoadingIndicator />) ||

@@ -1,0 +1,7 @@
+.root {
+    @apply w-full p-3 my-3;
+}
+
+.root ul li {
+    @apply list-disc list-inside;
+}

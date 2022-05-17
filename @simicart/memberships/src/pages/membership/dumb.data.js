@@ -1,4 +1,4 @@
-export default [
+const plansdata = [
     [
         {
             month: 1,
@@ -26,3 +26,15 @@ export default [
         }
     ]
 ];
+
+const benefitdata = [
+    ['Free Shipping', 'Membership', 'WPA testin'],
+    [
+        'Buy 3 tee shirts and get the 4th free',
+        'Spend $50 or more - shipping is free!',
+        '$4 Luma water bottle (save 70%)'
+    ],
+    ['Free Shipping', 'Early Checkin', 'Free Product']
+];
+
+export { plansdata, benefitdata };

@@ -30,6 +30,7 @@ const CardContainer = props => {
                             desc={item.description.html}
                             imageurl={item.image.url}
                             label={item.image.label}
+                            benefits={item.benefits}
                             plans={item.mp_membership_attributes.plans}
                             durationtype={
                                 item.mp_membership_attributes.duration_type

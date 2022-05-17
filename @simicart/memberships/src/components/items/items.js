@@ -1,6 +1,7 @@
 import React from 'react';
 
-import PlanList from './planlist/index';
+import PlanList from './planlist';
+import BenefitList from './benefitlist';
 
 import { useHistory } from 'react-router-dom';
 
@@ -49,10 +50,7 @@ const Items = props => {
                         src={props.imageurl}
                         alt={props.label}
                     />
-                    <div
-                        className={classes.description}
-                        dangerouslySetInnerHTML={{ __html: props.desc }}
-                    />
+                    <BenefitList benefits={props.benefits} />
                 </div>
             </div>
 
