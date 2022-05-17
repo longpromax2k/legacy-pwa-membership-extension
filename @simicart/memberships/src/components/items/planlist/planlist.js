@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { useIntl } from 'react-intl';
+
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
@@ -12,6 +15,7 @@ import defaultClasses from './planlist.module.css';
  */
 const PlanList = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
+    const intl = useIntl();
 
     if (props.type === 'by_default') {
         return (
@@ -26,7 +30,11 @@ const PlanList = props => {
                             key={index}
                             value={plan.month + ',' + plan.price}
                         >
-                            {plan.price} /{' '}
+                            {intl.formatNumber(plan.price, {
+                                style: 'currency',
+                                currency: 'USD'
+                            })}
+                            {' / '}
                             {plan.month >= 12
                                 ? Math.floor(plan.month / 12) + ' year(s)'
                                 : plan.month + ' month(s)'}
@@ -39,7 +47,12 @@ const PlanList = props => {
 
     return (
         <div className={classes.permanentContainer}>
-            <strong className="text-xl">{props.plans[0].price}</strong>
+            <div className="text-xl font-semibold">
+                {intl.formatNumber(props.plans[0].price, {
+                    style: 'currency',
+                    currency: props.plans[0].currency
+                })}
+            </div>
             <div>Permanent</div>
         </div>
     );
