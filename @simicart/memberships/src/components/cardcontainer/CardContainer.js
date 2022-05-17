@@ -23,6 +23,8 @@ const CardContainer = props => {
                 props.data.map((item, i) => {
                     let isFeatured = i !== 1 ? 0 : 1;
 
+                    console.log(item);
+
                     return (
                         <MembershipItem
                             key={item.uid}
@@ -30,7 +32,7 @@ const CardContainer = props => {
                             desc={item.description.html}
                             imageurl={item.image.url}
                             label={item.image.label}
-                            price={item.mpmembership_price_fixed}
+                            plans={item.mp_membership_attributes.plans}
                             durationtype={
                                 item.mp_membership_attributes.duration_type
                             }

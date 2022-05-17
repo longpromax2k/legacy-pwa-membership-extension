@@ -7,6 +7,15 @@ import { useGetProducts } from '../../talons/useGetProducts';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
+import dumbData from './dumb.data';
+
+// let newData = dumbData.map(item => {
+//     return {
+//         ...item,
+
+//     };
+// });
+
 /*
  * Membership Page that contains a list of all the memberships
  * and the ability to add them to the cart.
@@ -14,6 +23,18 @@ import { shape, string } from 'prop-types';
  */
 const MembershipPage = () => {
     const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
+    let mbshipItem = mbshipData.products.items;
+
+    // modify dumb data for temp boilerplate value
+    const newData = mbshipItem.map((item, index) => {
+        return {
+            ...item,
+            mp_membership_attributes: {
+                ...item.mp_membership_attributes,
+                plans: dumbData[index]
+            }
+        };
+    });
 
     return (
         (mbshipLoading && <fullPageLoadingIndicator />) ||
@@ -25,10 +46,7 @@ const MembershipPage = () => {
                     Membership
                 </h1>
                 <hr />
-                <CardContainer
-                    button="Add to Cart"
-                    data={mbshipData.products.items}
-                />
+                <CardContainer button="Add to Cart" data={newData} />
             </>
         ))
     );

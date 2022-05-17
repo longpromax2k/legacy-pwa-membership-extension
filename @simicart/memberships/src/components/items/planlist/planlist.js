@@ -20,19 +20,23 @@ const PlanList = props => {
                 name="duration"
                 id="subs-duration"
             >
-                {/* sẽ refactor lại sau khi có api */}
-                <option value={'$' + props.price + ' / month'}>
-                    ${props.price} / month
-                </option>
-                <option value={'$' + props.price * 12 + ' / month'}>
-                    ${props.price * 12} / year
-                </option>
+                {props.plans.map(plan => {
+                    return (
+                        <option value={plan.month + ',' + plan.price}>
+                            {plan.price} /{' '}
+                            {plan.month >= 12
+                                ? Math.floor(plan.month / 12) + ' year(s)'
+                                : plan.month + ' month(s)'}
+                        </option>
+                    );
+                })}
             </select>
         );
     }
+
     return (
         <div className={classes.permanentContainer}>
-            <strong className="text-xl">{'$' + props.price}</strong>
+            <strong className="text-xl">{props.plans[0].price}</strong>
             <div>Permanent</div>
         </div>
     );
