@@ -1,5 +1,5 @@
 .membershipItem {
-    @apply m-3 w-80 relative
+    @apply m-3 w-96 relative
 	flex flex-col items-center 
 	border rounded-md duration-sm
 	hover_shadow-xl;
