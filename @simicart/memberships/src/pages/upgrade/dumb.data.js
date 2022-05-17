@@ -28,7 +28,13 @@ export default {
                 __typename: 'MembershipProductAttributes',
                 duration_type: 'by_default',
                 membership: null,
-                membership_price_fixed: 30
+                membership_price_fixed: 30,
+                plans: [
+                    {
+                        month: null,
+                        price: '$69.99'
+                    }
+                ]
             },
             mpmembership_price_fixed: 30,
             mpmembership_duration_options: null,
