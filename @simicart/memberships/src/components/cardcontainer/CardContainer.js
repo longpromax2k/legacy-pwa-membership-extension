@@ -23,8 +23,6 @@ const CardContainer = props => {
                 props.data.map((item, i) => {
                     let isFeatured = i !== 1 ? 0 : 1;
 
-                    console.log(item);
-
                     return (
                         <MembershipItem
                             key={item.uid}

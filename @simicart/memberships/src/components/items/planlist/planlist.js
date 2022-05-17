@@ -20,9 +20,12 @@ const PlanList = props => {
                 name="duration"
                 id="subs-duration"
             >
-                {props.plans.map(plan => {
+                {props.plans.map((plan, index) => {
                     return (
-                        <option value={plan.month + ',' + plan.price}>
+                        <option
+                            key={index}
+                            value={plan.month + ',' + plan.price}
+                        >
                             {plan.price} /{' '}
                             {plan.month >= 12
                                 ? Math.floor(plan.month / 12) + ' year(s)'
