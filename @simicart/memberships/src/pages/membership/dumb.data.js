@@ -2,43 +2,52 @@ const plansdata = [
     [
         {
             month: 1,
-            price: '$9.99'
+            price: '9.99',
+            currency: 'USD'
         },
         {
             month: 6,
-            price: '$39.99'
+            price: '39.99',
+            currency: 'USD'
         },
         {
             month: 12,
-            price: '$99.99'
+            price: '99.99',
+            currency: 'USD'
         }
     ],
     [
         {
             month: null,
-            price: '$69.99'
+            price: '69.99',
+            currency: 'USD'
         }
     ],
     [
         {
             month: 1,
-            price: '$15.99'
+            price: '15.99',
+            currency: 'USD'
         },
         {
             month: 3,
-            price: '$19.99'
+            price: '19.99',
+            currency: 'USD'
         },
         {
             month: 6,
-            price: '$29.99'
+            price: '29.99',
+            currency: 'USD'
         },
         {
             month: 12,
-            price: '$159.99'
+            price: '159.99',
+            currency: 'USD'
         },
         {
             month: 24,
-            price: '$259.99'
+            price: '259.99',
+            currency: 'USD'
         }
     ]
 ];

@@ -33,11 +33,18 @@ export default {
                 plans: [
                     {
                         month: 1,
-                        price: '$9.99'
+                        price: '9.99',
+                        currency: 'USD'
+                    },
+                    {
+                        month: 6,
+                        price: '39.99',
+                        currency: 'USD'
                     },
                     {
                         month: 12,
-                        price: '$99.99'
+                        price: '99.99',
+                        currency: 'USD'
                     }
                 ]
             },
