@@ -2,27 +2,27 @@ export default [
     [
         {
             month: 1,
-            price: '$10.00'
+            price: '$9.99'
         },
         {
             month: 12,
-            price: '$100.00'
+            price: '$99.99'
         }
     ],
     [
         {
             month: null,
-            price: '$80.00'
+            price: '$69.99'
         }
     ],
     [
         {
             month: 1,
-            price: '$15.00'
+            price: '$15.99'
         },
         {
             month: 12,
-            price: '$150.00'
+            price: '$159.99'
         }
     ]
 ];
