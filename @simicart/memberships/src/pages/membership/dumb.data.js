@@ -5,6 +5,10 @@ const plansdata = [
             price: '$9.99'
         },
         {
+            month: 6,
+            price: '$39.99'
+        },
+        {
             month: 12,
             price: '$99.99'
         }
@@ -21,8 +25,20 @@ const plansdata = [
             price: '$15.99'
         },
         {
+            month: 3,
+            price: '$19.99'
+        },
+        {
+            month: 6,
+            price: '$29.99'
+        },
+        {
             month: 12,
             price: '$159.99'
+        },
+        {
+            month: 24,
+            price: '$259.99'
         }
     ]
 ];

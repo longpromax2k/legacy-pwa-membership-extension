@@ -18,6 +18,7 @@ export default {
                 html:
                     '<style>#html-body [data-pb-style=FX56PU7]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="FX56PU7"><div data-content-type="text" data-appearance="default" data-element="main"><ul>\r\n<li>Free Shipping</li>\r\n<li>Membership</li>\r\n<li>WPA testin</li>\r\n</ul></div></div></div>'
             },
+            benefits: ['Free Shipping', 'Membership', 'WPA testin'],
             image: {
                 __typename: 'ProductImage',
                 label: 'Gold',
@@ -31,8 +32,12 @@ export default {
                 membership_price_fixed: 30,
                 plans: [
                     {
-                        month: null,
-                        price: '$69.99'
+                        month: 1,
+                        price: '$9.99'
+                    },
+                    {
+                        month: 12,
+                        price: '$99.99'
                     }
                 ]
             },
