@@ -29,8 +29,6 @@ const MembershipPage = () => {
         };
     });
 
-    console.log(newData);
-
     return (
         (mbshipLoading && <fullPageLoadingIndicator />) ||
         (mbshipError ? (
