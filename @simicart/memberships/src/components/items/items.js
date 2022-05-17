@@ -57,10 +57,7 @@ const Items = props => {
             </div>
 
             <form onSubmit={handleSubmit}>
-                <PlanList
-                    plans={props.plans}
-                    type={props.durationtype}
-                />
+                <PlanList plans={props.plans} type={props.durationtype} />
                 <button type="submit" className={classes.addToCart}>
                     {props.button}
                 </button>
