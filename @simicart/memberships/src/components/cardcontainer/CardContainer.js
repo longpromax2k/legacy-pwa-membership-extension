@@ -16,26 +16,22 @@ import defaultClasses from './CardContainer.module.css';
  */
 const CardContainer = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
+    console.log(props.data);
 
     return (
         <div className={classes.root}>
             {props.data.length > 0 ? (
                 props.data.map((item, i) => {
-                    let isFeatured = i !== 1 ? 0 : 1;
-
                     return (
                         <MembershipItem
                             key={item.uid}
                             name={item.name}
-                            desc={item.description.html}
-                            imageurl={item.image.url}
-                            label={item.image.label}
+                            imageurl={item.image}
+                            label={item.featured_label}
                             benefits={item.benefits}
-                            plans={item.mp_membership_attributes.plans}
-                            durationtype={
-                                item.mp_membership_attributes.duration_type
-                            }
-                            featured={isFeatured}
+                            price={item.price}
+                            duration={item.duration}
+                            featured={0}
                             button={props.button}
                         />
                     );

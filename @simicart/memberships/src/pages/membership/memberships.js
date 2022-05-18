@@ -3,10 +3,9 @@ import React from 'react';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
 import CardContainer from '../../components/cardcontainer';
 
-import { useGetProducts } from '../../talons/useGetProducts';
-import { shape, string } from 'prop-types';
+import { useProductPage } from '../../talons/ProductPage/useProductPage';
 
-import { plansdata, benefitdata } from './dumb.data';
+import { shape, string } from 'prop-types';
 
 /*
  * Membership Page that contains a list of all the memberships
@@ -14,32 +13,21 @@ import { plansdata, benefitdata } from './dumb.data';
  * @return {ReactElement}
  */
 const MembershipPage = () => {
-    const { mbshipData, mbshipLoading, mbshipError } = useGetProducts();
-    let mbshipItem = mbshipData.products.items;
+    const { data, loading, error } = useProductPage();
 
-    // modify dumb data for temp boilerplate value
-    const newData = mbshipItem.map((item, index) => {
-        return {
-            ...item,
-            benefits: benefitdata[index],
-            mp_membership_attributes: {
-                ...item.mp_membership_attributes,
-                plans: plansdata[index]
-            }
-        };
-    });
-
+    const { items } = data.mpMembershipPage;
+    
     return (
-        (mbshipLoading && <fullPageLoadingIndicator />) ||
-        (mbshipError ? (
-            <MembershipErrorPage error={mbshipError} />
+        (loading && <fullPageLoadingIndicator />) ||
+        (error ? (
+            <MembershipErrorPage error={error.message} />
         ) : (
             <>
                 <h1 className="text-2xl mb-3 text-center lg_text-left">
                     Membership
                 </h1>
                 <hr />
-                <CardContainer button="Add to Cart" data={newData} />
+                <CardContainer button="Add to Cart" data={items} />
             </>
         ))
     );

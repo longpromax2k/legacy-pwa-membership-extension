@@ -9,13 +9,17 @@ const BenefitList = props => {
     return (
         <div className={classes.root}>
             <ul>
-                {props.benefits.map((benefit, i) => {
-                    return (
-                        <li key={i}>
-                            <span>{benefit}</span>
-                        </li>
-                    );
-                })}
+                {!props.benefits ? (
+                    <li>No benefits found</li>
+                ) : (
+                    props.benefits.map((benefit, i) => {
+                        return (
+                            <li key={i}>
+                                <span>{benefit}</span>
+                            </li>
+                        );
+                    })
+                )}
             </ul>
         </div>
     );
