@@ -31,7 +31,7 @@ const Items = props => {
                 {props.featured ? (
                     <div className={classes.featuredItem}>
                         <img
-                            src="https://membership-demo.mageplaza.com/media/mageplaza/membership/default/featured.png"
+                            src={props.featuredImage}
                             alt="featured"
                         />
                         <span>

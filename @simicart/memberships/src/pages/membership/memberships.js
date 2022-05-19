@@ -13,23 +13,21 @@ import { shape, string } from 'prop-types';
  * @return {ReactElement}
  */
 const MembershipPage = () => {
-    const { data, loading, error } = useProductPage();
+    const { mpMbsdata, mpMbsloading, mpMbserror } = useProductPage();
 
-    const { items } = data.mpMembershipPage;
-    
     return (
-        (loading && <fullPageLoadingIndicator />) ||
-        (error ? (
-            <MembershipErrorPage error={error.message} />
+        (mpMbsloading && <fullPageLoadingIndicator />) ||
+        mpMbserror ? (
+            <MembershipErrorPage error={mpMbserror} />
         ) : (
             <>
                 <h1 className="text-2xl mb-3 text-center lg_text-left">
                     Membership
                 </h1>
                 <hr />
-                <CardContainer button="Add to Cart" data={items} />
+                <CardContainer button="Add to Cart" data={mpMbsdata.mpMembershipPage.items} />
             </>
-        ))
+        )
     );
 };
 

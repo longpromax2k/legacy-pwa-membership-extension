@@ -14,8 +14,6 @@ import defaultClasses from './planlist.module.css';
 const PlanList = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
 
-    console.log(props);
-
     return (
         <div className={classes.permanentContainer}>
             <div className="text-xl font-semibold">{props.price}</div>
