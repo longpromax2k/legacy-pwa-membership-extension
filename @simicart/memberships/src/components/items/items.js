@@ -3,7 +3,9 @@ import React from 'react';
 import PlanList from './planlist';
 import BenefitList from './benefitlist';
 
-import { useHistory } from 'react-router-dom';
+import { useAddToCart } from '../../talons/AddToCart/useAddToCart';
+import { useGetProducts } from '../../talons/Products/useGetProducts';
+import { useCustomerCart } from '../../talons/CustomerCart/useCustomerCart';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
@@ -18,11 +20,22 @@ import defaultClasses from './items.module.css';
  */
 const Items = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
-    const history = useHistory();
+    const { data, loading, error } = useGetProducts(props.name);
+    const {
+        data: uCartData,
+        loading: uCartLoading,
+        error: uCartError
+    } = useCustomerCart();
+    const { addToCart } = useAddToCart();
+
+    const sku = !loading && !error && data.products.items[0].sku;
+    const cartId = !uCartLoading && !uCartError && uCartData.customerCart.id;
 
     const handleSubmit = e => {
         e.preventDefault();
-        history.push('/upgrade');
+        addToCart({
+            variables: { cart_id: cartId, sku: sku }
+        });
     };
 
     return (
@@ -30,17 +43,21 @@ const Items = props => {
             <div className="w-full flex-grow">
                 {props.featured ? (
                     <div className={classes.featuredItem}>
-                        <img
-                            src={props.featuredImage}
-                            alt="featured"
-                        />
+                        <img src={props.featuredImage} alt="featured" />
                         <span>
-                            <strong>Featured</strong>
+                            <strong>
+                                {props.featuredLabel
+                                    ? props.featuredLabel
+                                    : 'Featured'}
+                            </strong>
                         </span>
                     </div>
                 ) : null}
 
-                <div className={classes.membershipItemTitle}>
+                <div
+                    className={classes.membershipItemTitle}
+                    style={{ backgroundColor: props.color }}
+                >
                     <h1>{props.name}</h1>
                 </div>
 
@@ -56,7 +73,11 @@ const Items = props => {
 
             <form onSubmit={handleSubmit}>
                 <PlanList price={props.price} duration={props.duration} />
-                <button type="submit" className={classes.addToCart}>
+                <button
+                    type="submit"
+                    className={classes.addToCart}
+                    style={{ backgroundColor: props.color }}
+                >
                     {props.button}
                 </button>
             </form>

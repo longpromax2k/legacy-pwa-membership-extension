@@ -10,14 +10,16 @@ import GET_MEMBERSHIP_PRODUCTS from './getProducts.gql';
  *
  * @return {QueryState} - return the query's state
  */
-export const useGetProducts = () => {
-    const { data: mbshipData, mbshipLoading, error: mbshipError } = useQuery(
-        GET_MEMBERSHIP_PRODUCTS
-    );
+export const useGetProducts = name => {
+    const { data, loading, error } = useQuery(GET_MEMBERSHIP_PRODUCTS, {
+        variables: {
+            match: name
+        }
+    });
 
     let derivedErrorMessage;
-    if (mbshipError) {
-        const errorTarget = mbshipError;
+    if (error) {
+        const errorTarget = error;
         if (errorTarget.graphQLErrors) {
             // Apollo prepends "GraphQL Error:" onto the message,
             // which we don't want to show to an end user.
@@ -31,5 +33,5 @@ export const useGetProducts = () => {
         }
     }
 
-    return { mbshipData, mbshipLoading, mbshipError };
+    return { data, loading, error };
 };

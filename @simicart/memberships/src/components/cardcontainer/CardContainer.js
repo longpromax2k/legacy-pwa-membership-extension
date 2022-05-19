@@ -32,6 +32,8 @@ const CardContainer = props => {
                             duration={item.duration}
                             featured={item.is_featured}
                             featuredImage={item.featured_image}
+                            featuredLabel={item.featured_label}
+                            color={item.background_color}
                             button={props.button}
                         />
                     );
