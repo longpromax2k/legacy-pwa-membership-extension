@@ -19,8 +19,8 @@ const CardContainer = props => {
 
     return (
         <div className={classes.root}>
-            {props.data.length > 0 ? (
-                props.data.map((item) => {
+            {props.data && props.data.length > 0 ? (
+                props.data.map(item => {
                     return (
                         <MembershipItem
                             key={item.name}

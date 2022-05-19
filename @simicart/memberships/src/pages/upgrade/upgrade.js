@@ -1,7 +1,10 @@
 import React from 'react';
 
+import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
 import CardContainer from '../../components/cardcontainer/index';
 import InfoBox from '../../components/infobox/infobox';
+
+import { useUpgradePage } from '../../talons/UpgradePage/useUpgradePage';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
@@ -14,8 +17,15 @@ import data from './dumb.data.js';
  * @return {ReactElement}
  */
 const UpgradePage = () => {
-    const { items } = data;
-    return (
+    const {
+        data: mpUpdata,
+        loading: mpUploading,
+        error: mpUperror
+    } = useUpgradePage();
+
+    return (mpUploading && <fullPageLoadingIndicator />) || mpUperror ? (
+        <>{mpUperror}</>
+    ) : (
         <>
             <h1 className="text-2xl mb-3 text-center lg_text-left">
                 Membership
@@ -27,7 +37,11 @@ const UpgradePage = () => {
             />
             <h2 className="text-xl mb-1">Current Membership</h2>
             <hr />
-            <CardContainer button="Upgrade" data={items} />
+            <CardContainer
+                button="Upgrade"
+                data={mpUpdata.mpMembershipUpgradePage.items}
+            />
+            {/* <button onClick={_ => console.log(mpUpdata)}>click</button> */}
         </>
     );
 };
