@@ -27,7 +27,7 @@ const CardContainer = props => {
                             name={item.name}
                             imageurl={item.image}
                             label={item.featured_label}
-                            benefits={item.benefits}
+                            benefits={item.benefit}
                             price={item.price}
                             duration={item.duration}
                             featured={item.is_featured}
