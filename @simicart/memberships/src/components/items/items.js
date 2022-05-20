@@ -31,6 +31,8 @@ const Items = props => {
     const sku = !loading && !error && data.products.items[0].sku;
     const cartId = !uCartLoading && !uCartError && uCartData.customerCart.id;
 
+    console.log(cartId)
+
     const handleSubmit = async e => {
         e.preventDefault();
         try {
@@ -38,8 +40,8 @@ const Items = props => {
                 variables: { cart_id: cartId, sku: sku }
             });
         } catch (error) {
-            console.log(error);
-            console.log(addToCartError);
+            console.error(addToCartError);
+            alert(error);
         }
     };
 
