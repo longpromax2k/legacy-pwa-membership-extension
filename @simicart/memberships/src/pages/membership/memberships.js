@@ -15,9 +15,14 @@ import { shape, string } from 'prop-types';
 const MembershipPage = () => {
     const { mpMbsdata, mpMbsloading, mpMbserror } = useProductPage();
 
-    return (mpMbsloading && <fullPageLoadingIndicator />) || mpMbserror ? (
-        <MembershipErrorPage error={mpMbserror} />
-    ) : (
+    if (mpMbsloading) {
+        return fullPageLoadingIndicator;
+    }
+    if (mpMbserror) {
+        return <MembershipErrorPage error={mpMbserror} />;
+    }
+
+    return (
         <>
             <h1 className="text-2xl mb-3 text-center lg_text-left">
                 Membership

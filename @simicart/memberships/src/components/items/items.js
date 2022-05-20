@@ -31,17 +31,19 @@ const Items = props => {
     const sku = !loading && !error && data.products.items[0].sku;
     const cartId = !uCartLoading && !uCartError && uCartData.customerCart.id;
 
-    console.log(cartId)
-
     const handleSubmit = async e => {
         e.preventDefault();
-        try {
-            await addToCart({
-                variables: { cart_id: cartId, sku: sku }
-            });
-        } catch (error) {
-            console.error(addToCartError);
-            alert(error);
+        if (!cartId) {
+            alert('Please login to add to cart');
+        } else {
+            try {
+                await addToCart({
+                    variables: { cart_id: cartId, sku: sku }
+                });
+            } catch (error) {
+                console.error(addToCartError);
+                alert(error);
+            }
         }
     };
 

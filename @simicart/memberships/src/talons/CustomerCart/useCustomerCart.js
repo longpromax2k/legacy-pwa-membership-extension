@@ -8,11 +8,22 @@ const ADD_CART = gql`
     }
 `;
 
-const token = JSON.parse(
-    localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__cartId')
-).value;
-
 export const useCustomerCart = () => {
+    const token = JSON.parse(
+        localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__cartId')
+    ).value;
+
+    if (!token) {
+        return {
+            data: {
+                customerCart: {
+                    id: '',
+                },
+            },
+            loading: false,
+            error: null,
+        };
+    }
     const { data, loading, error } = useQuery(ADD_CART, {
         context: { headers: { authorization: `Bearer ${token}` } }
     });
