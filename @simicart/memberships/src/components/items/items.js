@@ -26,16 +26,21 @@ const Items = props => {
         loading: uCartLoading,
         error: uCartError
     } = useCustomerCart();
-    const { addToCart } = useAddToCart();
+    const { addToCart, error: addToCartError } = useAddToCart();
 
     const sku = !loading && !error && data.products.items[0].sku;
     const cartId = !uCartLoading && !uCartError && uCartData.customerCart.id;
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        addToCart({
-            variables: { cart_id: cartId, sku: sku }
-        });
+        try {
+            await addToCart({
+                variables: { cart_id: cartId, sku: sku }
+            });
+        } catch (error) {
+            console.log(error);
+            console.log(addToCartError);
+        }
     };
 
     return (
