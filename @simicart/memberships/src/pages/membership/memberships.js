@@ -4,7 +4,6 @@ import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/Loadi
 import CardContainer from '../../components/cardcontainer';
 
 import { useProductPage } from '../../talons/ProductPage/useProductPage';
-import { useGetProducts } from '../../talons/Products/useGetProducts';
 
 import { shape, string } from 'prop-types';
 
@@ -15,7 +14,6 @@ import { shape, string } from 'prop-types';
  */
 const MembershipPage = () => {
     const { mpMbsdata, mpMbsloading, mpMbserror } = useProductPage();
-    let { data, loading, error } = useGetProducts('Silver');
 
     return (mpMbsloading && <fullPageLoadingIndicator />) || mpMbserror ? (
         <MembershipErrorPage error={mpMbserror} />
