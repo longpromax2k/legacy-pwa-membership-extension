@@ -31,7 +31,5 @@ module.exports = targets => {
         });
 
         return routesArray;
-
-        return routesArray;
     });
 };

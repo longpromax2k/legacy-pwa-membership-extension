@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client';
-import GET_MEMBERSHIP_PRODUCTS from './getProducts.gql';
+import GET_MEMBERSHIP_PAGE from './ProductPage.gql';
 
 /*
- * Fetch products from the GraphQL endpoint and return the state
+ * Fetch membership products from the GraphQL endpoint and return the state
  * @typedef {Object} QueryState
  * @props {Object} mbshipData - fetched data from GraphQL
  * @props {Boolean} mbshipLoading - loading state of the query
@@ -10,14 +10,16 @@ import GET_MEMBERSHIP_PRODUCTS from './getProducts.gql';
  *
  * @return {QueryState} - return the query's state
  */
-export const useGetProducts = () => {
-    const { data: mbshipData, mbshipLoading, error: mbshipError } = useQuery(
-        GET_MEMBERSHIP_PRODUCTS
-    );
+export const useProductPage = () => {
+    const {
+        data: mpMbsdata,
+        loading: mpMbsloading,
+        error: mpMbserror
+    } = useQuery(GET_MEMBERSHIP_PAGE);
 
     let derivedErrorMessage;
-    if (mbshipError) {
-        const errorTarget = mbshipError;
+    if (mpMbserror) {
+        const errorTarget = mpMbserror;
         if (errorTarget.graphQLErrors) {
             // Apollo prepends "GraphQL Error:" onto the message,
             // which we don't want to show to an end user.
@@ -31,5 +33,5 @@ export const useGetProducts = () => {
         }
     }
 
-    return { mbshipData, mbshipLoading, mbshipError };
+    return { mpMbsdata, mpMbsloading, mpMbserror };
 };

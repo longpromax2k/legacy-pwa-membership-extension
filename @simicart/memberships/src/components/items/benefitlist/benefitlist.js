@@ -6,17 +6,23 @@ import defaultClasses from './benefitlist.module.css';
 
 const BenefitList = props => {
     const classes = mergeClasses(defaultClasses, props.classes);
+    const parsedBenefits = JSON.parse(props.benefits);
+
+    const renderList = () => {
+        let result = [];
+        for (const [key, value] of Object.entries(parsedBenefits)) {
+            result.push(
+                <li key={key}>
+                    <span>{value}</span>
+                </li>
+            );
+        }
+        return result;
+    };
+
     return (
         <div className={classes.root}>
-            <ul>
-                {props.benefits.map((benefit, i) => {
-                    return (
-                        <li key={i}>
-                            <span>{benefit}</span>
-                        </li>
-                    );
-                })}
-            </ul>
+            <ul>{!props.benefits ? <li>No benefits found</li> : renderList()}</ul>
         </div>
     );
 };
