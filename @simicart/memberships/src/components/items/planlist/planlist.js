@@ -5,7 +5,7 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './planlist.module.css';
 
-/*
+/**
  * PlanList component that displays the information of the membership
  * @params {Object} props - Props passed from parent
  * @props {string[]} benefits - the benefits of the membership

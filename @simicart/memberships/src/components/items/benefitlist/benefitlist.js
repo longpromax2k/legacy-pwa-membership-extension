@@ -4,7 +4,7 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './benefitlist.module.css';
 
-/*
+/**
 * @summary - BenefitList component
 * @param {object} props - React props
 * @props {string} classes - Additional classes

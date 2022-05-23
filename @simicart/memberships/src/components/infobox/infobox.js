@@ -4,7 +4,7 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './infobox.module.css';
 
-/*
+/**
  * InfoBox component that displays the information
  * @param {Object} props - component props
  * @props {Object} value - the value to display

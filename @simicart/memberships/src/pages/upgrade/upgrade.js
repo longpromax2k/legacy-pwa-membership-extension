@@ -9,7 +9,7 @@ import { useUpgradePage } from '../../talons/UpgradePage/useUpgradePage';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
-/*
+/**
  * Upgrade page that contains a card of registered memberships
  * and the ability to upgrade it.
  * @return {ReactElement}
