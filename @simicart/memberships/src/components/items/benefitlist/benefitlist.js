@@ -8,7 +8,7 @@ import defaultClasses from './benefitlist.module.css';
 * @summary - BenefitList component
 * @param {object} props - React props
 * @props {string} classes - Additional classes
-* @props {object} benefit - Benefit object
+* @props {string} benefit - Benefit object
 * @return {ReactElement} - Rendered component
 */
 const BenefitList = props => {
