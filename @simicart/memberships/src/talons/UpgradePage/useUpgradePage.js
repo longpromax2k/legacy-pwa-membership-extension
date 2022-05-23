@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import GET_UPGRADE_PAGE from './UpgradePage.gql';
 
-/*
+/**
  * Fetch membership products from the GraphQL endpoint and return the state
  * @typedef {Object} QueryState
  * @props {Object} mbshipData - fetched data from GraphQL

@@ -8,6 +8,14 @@ const ADD_CART = gql`
     }
 `;
 
+/**
+ * Checkout or create empty cart if it's not exist
+ * @typedef {Object} QueryState
+ * @props {object} data - cart data
+ * @props {boolean} loading - loading state of the query
+ * @props {object} error - error state of the query
+ * @returns {QueryState}
+ */
 export const useCustomerCart = () => {
     const token = JSON.parse(
         localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__cartId')
@@ -17,11 +25,11 @@ export const useCustomerCart = () => {
         return {
             data: {
                 customerCart: {
-                    id: '',
-                },
+                    id: ''
+                }
             },
             loading: false,
-            error: null,
+            error: null
         };
     }
     const { data, loading, error } = useQuery(ADD_CART, {
