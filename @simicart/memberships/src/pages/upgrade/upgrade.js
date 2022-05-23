@@ -15,6 +15,10 @@ import { shape, string } from 'prop-types';
  * @return {ReactElement}
  */
 const UpgradePage = () => {
+    if (!localStorage.M2_VENIA_BROWSER_PERSISTENCE__signin_token) {
+        return <div className='text-xl text-center mt-5'>You must login first to check upgraded item.</div>;
+    }
+
     const {
         data: mpUpdata,
         loading: mpUploading,
