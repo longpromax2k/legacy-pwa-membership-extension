@@ -9,12 +9,16 @@ import { useUpgradePage } from '../../talons/UpgradePage/useUpgradePage';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import { shape, string } from 'prop-types';
 
-/*
+/**
  * Upgrade page that contains a card of registered memberships
  * and the ability to upgrade it.
  * @return {ReactElement}
  */
 const UpgradePage = () => {
+    if (!localStorage.M2_VENIA_BROWSER_PERSISTENCE__signin_token) {
+        return <div className='text-xl text-center mt-5'>You must login first to check upgraded item.</div>;
+    }
+
     const {
         data: mpUpdata,
         loading: mpUploading,

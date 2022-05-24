@@ -7,7 +7,7 @@ import { useProductPage } from '../../talons/ProductPage/useProductPage';
 
 import { shape, string } from 'prop-types';
 
-/*
+/**
  * Membership Page that contains a list of all the memberships
  * and the ability to add them to the cart.
  * @return {ReactElement}

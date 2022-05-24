@@ -12,7 +12,7 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './items.module.css';
 
-/*
+/**
  * Item container for the membership cards
  * @param {Object} props - Props passed from parent
  * @props {Object[]} data - data object from the api passed from parent

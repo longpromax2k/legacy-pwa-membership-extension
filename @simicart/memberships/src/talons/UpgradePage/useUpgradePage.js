@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import GET_UPGRADE_PAGE from './UpgradePage.gql';
 
-/*
+/**
  * Fetch membership products from the GraphQL endpoint and return the state
  * @typedef {Object} QueryState
  * @props {Object} mbshipData - fetched data from GraphQL
@@ -10,11 +10,12 @@ import GET_UPGRADE_PAGE from './UpgradePage.gql';
  *
  * @return {QueryState} - return the query's state
  */
-const token = JSON.parse(
-    localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__cartId')
-).value;
 
 export const useUpgradePage = () => {
+    const token = JSON.parse(
+        localStorage.getItem('M2_VENIA_BROWSER_PERSISTENCE__signin_token')
+    ).value;
+
     const { data, loading, error } = useQuery(GET_UPGRADE_PAGE, {
         context: { headers: { authorization: `Bearer ${token}` } }
     });

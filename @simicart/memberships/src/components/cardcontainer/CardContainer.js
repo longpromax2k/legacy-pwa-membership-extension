@@ -7,7 +7,7 @@ import { shape, string } from 'prop-types';
 
 import defaultClasses from './CardContainer.module.css';
 
-/*
+/**
  * Container for the membership cards
  * @param {Object} props - Props passed from parent
  * @props {string} button - button value
